@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Acceder &#x1F43E;{% endblock title %}
+
+
+{% block main %}
+
+<link rel="stylesheet" href="/static/css/ingreso.css">
+<div class="row justify-content-md-center">
+    
+    <a class="navbar-brand text-center" href="/">
+        <img src="/static/img/logo2.svg" alt="logo" height="50px">
+        <img src="/static/img/logo3.svg" alt="logo" height="50px">
+    </a>
+</div>
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div class="fadeIn first">
+       <h2>PetStore</h2>
+      </div>
+    <form class="form" method="POST">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <input type="text" class="fadeIn second" id="username" name="username" placeholder="Nombre de Usuario" required>
+        <input type="password" class="fadeIn second" id="password" name="password" placeholder="Contraseña" required>
+        <input type="submit" class="fadeIn fourth" value="Ingresa" href="" >
+    </form>
+      <div id="formFooter">
+        <a class="underlineHover" href="/registrar/">Regístrate aquí</a>
+      </div>
+    </div>
+  </div>
+{% endblock main %}
